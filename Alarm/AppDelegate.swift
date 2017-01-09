@@ -52,11 +52,16 @@ extension AppDelegate {
     func setup() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert]) { accepted, error in
             if accepted {
-                self.scheduleNotification(at: Date(timeIntervalSinceNow: 15))
+                let newDate = Date(timeIntervalSinceNow: 15)
+                self.scheduleNotification(at: newDate)
             } else {
                 print("Notification access denied.")
             }
         }
+        
+        let action = UNNotificationAction(identifier: "remindLater", title: "Remind me later", options: [])
+        let category = UNNotificationCategory(identifier: "myCategory", actions: [action], intentIdentifiers: [], options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
     }
     
     func scheduleNotification(at date: Date) {
@@ -70,14 +75,34 @@ extension AppDelegate {
         content.title = "Tutorial Reminder"
         content.body = "Just a reminder to read your tutorial over at appcoda.com!"
         content.sound = UNNotificationSound.default()
+        content.categoryIdentifier = "myCategory"
         
         let request = UNNotificationRequest(identifier: "textNotification", content: content, trigger: trigger)
         
+        UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().add(request) {(error) in
             if let error = error {
                 print("Uh oh! We had an error: \(error)")
             }
+        }
+        
+        print("schedule")
+    }
+    
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print(notification)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print(response.actionIdentifier)
+        if response.actionIdentifier == "remindLater" {
+            let newDate = Date(timeIntervalSinceNow: 15)
+            scheduleNotification(at: newDate)
         }
     }
     
