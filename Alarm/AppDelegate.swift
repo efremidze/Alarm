@@ -90,10 +90,24 @@ extension AppDelegate {
 //    }
     
     func scheduleNotification() {
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
         var components = DateComponents()
         components.hour = 16
         components.minute = 20
+        let request = notificationRequest(components: components)
         
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Uh oh! We had an error: \(error)")
+            }
+        }
+        
+        print("scheduled")
+    }
+    
+    func notificationRequest(components: DateComponents) -> UNNotificationRequest {
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
         
         let content = UNMutableNotificationContent()
@@ -102,17 +116,7 @@ extension AppDelegate {
         content.sound = UNNotificationSound.default()
         content.categoryIdentifier = "myCategory"
         
-        let request = UNNotificationRequest(identifier: "textNotification", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        UNUserNotificationCenter.current().add(request) {(error) in
-            if let error = error {
-                print("Uh oh! We had an error: \(error)")
-            }
-        }
-        
-        print("scheduled")
+        return UNNotificationRequest(identifier: "textNotification", content: content, trigger: trigger)
     }
     
 }
