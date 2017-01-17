@@ -10,35 +10,35 @@ import UserNotifications
 
 let UNC = UNUserNotificationCenter.current()
 
-struct Notifications {
+enum CustomType: String {
+    case am, pm, day
     
-    enum `Type`: String {
-        case am, pm, day
-        
-        private func dateComponents() -> DateComponents {
-            switch self {
-            case .am:
-                var components = DateComponents()
-                components.hour = 4
-                components.minute = 20
-                return components
-            case .pm:
-                var components = DateComponents()
-                components.hour = 16
-                components.minute = 20
-                return components
-            case .day:
-                var components = DateComponents()
-                components.month = 4
-                components.day = 20
-                return components
-            }
-        }
-        
-        func schedule(completionHandler: ((Error?) -> Void)? = nil) {
-            UNC.add(identifier: rawValue, title: "420 Get High 🙃", dateComponents: dateComponents(), withCompletionHandler: completionHandler)
+    private func dateComponents() -> DateComponents {
+        switch self {
+        case .am:
+            var components = DateComponents()
+            components.hour = 4
+            components.minute = 20
+            return components
+        case .pm:
+            var components = DateComponents()
+            components.hour = 16
+            components.minute = 20
+            return components
+        case .day:
+            var components = DateComponents()
+            components.month = 4
+            components.day = 20
+            return components
         }
     }
+    
+    func schedule(completionHandler: ((Error?) -> Void)? = nil) {
+        UNC.add(identifier: rawValue, title: "420 Get High 🙃", dateComponents: dateComponents(), withCompletionHandler: completionHandler)
+    }
+}
+
+struct Notifications {
     
     static func start() {
         UNC.requestAuthorization(options: [.sound, .alert]) { accepted, error in
