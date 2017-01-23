@@ -8,7 +8,7 @@
 
 import UserNotifications
 
-let UNC = UNUserNotificationCenter.current()
+private let UNC = UNUserNotificationCenter.current()
 
 enum AlarmType: String {
     case am, pm, day
@@ -54,7 +54,7 @@ struct Alarm {
     
 }
 
-extension UNUserNotificationCenter {
+private extension UNUserNotificationCenter {
     
     func add(identifier: String, title: String, dateComponents: DateComponents, withCompletionHandler completionHandler: ((Error?) -> Void)? = nil) {
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)

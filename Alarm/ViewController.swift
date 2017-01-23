@@ -10,12 +10,18 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    let items: [Item] = [Item.make(title: "AM", subtitle: "4:20 AM", type: .am), Item.make(title: "PM", subtitle: "4:20 PM", type: .pm), Item.make(title: "DAY", subtitle: "4/20", type: .day)]
+    let items: [Item] = [Item.make(title: "4:20 AM", subtitle: "4:20 AM", type: .am), Item.make(title: "4:20 PM", subtitle: "4:20 PM", type: .pm), Item.make(title: "4/20", subtitle: "4/20", type: .day)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "420!"
+        self.tableView.backgroundColor = .weedGreen
+        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.navigationBar.barTintColor = .weedGreen
+//        self.navigationController?.navigationBar.tintColor = .white
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationItem.title = "420!"
         
         self.tableView.tableHeaderView = UIView()
         self.tableView.tableFooterView = UIView()
@@ -61,7 +67,7 @@ extension ViewController {
 extension ViewController {
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Alarms"
+        return "Scheduled Alarms"
     }
     
 }
@@ -117,6 +123,26 @@ private class SwitchTableViewCell: UITableViewCell {
     
     @IBAction func valueChanged(sender: UISwitch) {
         self.valueChangedBlock?(sender)
+    }
+    
+}
+
+private extension UIColor {
+    
+    convenience init(red: Int, green: Int, blue: Int) {
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1)
+    }
+    
+//    class var weedGreen: UIColor {
+//        return UIColor(red: 120, green: 185, blue: 60)
+//    }
+    
+//    class var weedGreen: UIColor {
+//        return UIColor(red: 180, green: 236, blue: 81)
+//    }
+
+    class var weedGreen: UIColor {
+        return UIColor(red: 66, green: 147, blue: 33)
     }
     
 }
