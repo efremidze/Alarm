@@ -19,6 +19,14 @@ class ViewController: UITableViewController {
         
         self.tableView.tableHeaderView = UIView()
         self.tableView.tableFooterView = UIView()
+        
+        Alarm.start { accepted, error in
+            if accepted {
+                
+            } else {
+                print("Notification access denied.")
+            }
+        }
     }
     
 }
@@ -78,10 +86,20 @@ extension ViewController {
 struct Item {
     let title: String
     let subtitle: String
-    let type: CustomType
-    var isOn: Bool
+    let type: AlarmType
+    var isOn: Bool {
+        didSet {
+            if isOn {
+                type.schedule(title: "420 Get High 🙃") { error in
+                    
+                }
+            } else {
+                type.unschedule()
+            }
+        }
+    }
     
-    static func make(title: String, subtitle: String, type: CustomType) -> Item {
+    static func make(title: String, subtitle: String, type: AlarmType) -> Item {
         return Item(title: title, subtitle: subtitle, type: type, isOn: false)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  Notifications.swift
+//  Alarm.swift
 //  Alarm
 //
 //  Created by Lasha Efremidze on 1/13/17.
@@ -10,7 +10,7 @@ import UserNotifications
 
 let UNC = UNUserNotificationCenter.current()
 
-enum CustomType: String {
+enum AlarmType: String {
     case am, pm, day
     
     private func dateComponents() -> DateComponents {
@@ -33,21 +33,19 @@ enum CustomType: String {
         }
     }
     
-    func schedule(completionHandler: ((Error?) -> Void)? = nil) {
-        UNC.add(identifier: rawValue, title: "420 Get High 🙃", dateComponents: dateComponents(), withCompletionHandler: completionHandler)
+    func schedule(title: String, completionHandler: ((Error?) -> Void)? = nil) {
+        UNC.add(identifier: rawValue, title: title, dateComponents: dateComponents(), withCompletionHandler: completionHandler)
+    }
+    
+    func unschedule() {
+        UNC.removePendingNotificationRequests(withIdentifiers: [rawValue])
     }
 }
 
-struct Notifications {
+struct Alarm {
     
-    static func start() {
-        UNC.requestAuthorization(options: [.sound, .alert]) { accepted, error in
-            if accepted {
-                
-            } else {
-                print("Notification access denied.")
-            }
-        }
+    static func start(completionHandler: @escaping (Bool, Error?) -> Void) {
+        UNC.requestAuthorization(options: [.sound, .alert], completionHandler: completionHandler)
     }
     
     static func reset() {
