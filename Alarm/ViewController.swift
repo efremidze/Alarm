@@ -27,9 +27,7 @@ class ViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         
         Alarm.start { accepted, error in
-            if accepted {
-                
-            } else {
+            if !accepted {
                 print("Notification access denied.")
             }
         }
@@ -95,16 +93,6 @@ extension ViewController {
 //    
 //}
 
-struct Item {
-    let title: String
-    let subtitle: String?
-    let type: AlarmType
-    
-    static func make(title: String, subtitle: String?, type: AlarmType) -> Item {
-        return Item(title: title, subtitle: subtitle, type: type)
-    }
-}
-
 private class SwitchTableViewCell: UITableViewCell {
     
     lazy var switchView: UISwitch = { [unowned self] in
@@ -118,26 +106,6 @@ private class SwitchTableViewCell: UITableViewCell {
     
     @IBAction func valueChanged(sender: UISwitch) {
         self.valueChangedBlock?(sender)
-    }
-    
-}
-
-private extension UIColor {
-    
-    convenience init(red: Int, green: Int, blue: Int) {
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1)
-    }
-    
-//    class var weedGreen: UIColor {
-//        return UIColor(red: 120, green: 185, blue: 60)
-//    }
-    
-//    class var weedGreen: UIColor {
-//        return UIColor(red: 180, green: 236, blue: 81)
-//    }
-
-    class var weedGreen: UIColor {
-        return UIColor(red: 66, green: 147, blue: 33)
     }
     
 }

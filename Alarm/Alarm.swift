@@ -42,7 +42,7 @@ enum AlarmType: String {
     }
     
     func isScheduled(completionHandler: @escaping (Bool) -> Void) {
-        UNC.getPendingNotificationRequests { requests in DispatchQueue.main.async { completionHandler(requests.filter { $0.identifier == self.rawValue }.isEmpty) } }
+        UNC.getPendingNotificationRequests { requests in DispatchQueue.main.async { completionHandler(!requests.filter { $0.identifier == self.rawValue }.isEmpty) } }
     }
 }
 
