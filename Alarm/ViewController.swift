@@ -10,13 +10,13 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    let items: [Item] = [Item.make(title: "4:20 AM", subtitle: "4:20 AM", type: .am), Item.make(title: "4:20 PM", subtitle: "4:20 PM", type: .pm), Item.make(title: "4/20", subtitle: "4/20", type: .day)]
+    let items: [Item] = [Item.make(title: "4:20 AM", subtitle: nil, type: .am), Item.make(title: "4:20 PM", subtitle: nil, type: .pm), Item.make(title: "4/20", subtitle: nil, type: .day)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.backgroundColor = .weedGreen
-        self.navigationController?.isNavigationBarHidden = true
+//        self.tableView.backgroundColor = .weedGreen
+//        self.navigationController?.isNavigationBarHidden = true
 //        self.navigationController?.navigationBar.barTintColor = .weedGreen
 //        self.navigationController?.navigationBar.tintColor = .white
 //        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
@@ -48,14 +48,20 @@ extension ViewController {
         let reuseIdentifier = String(describing: SwitchTableViewCell.self)
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? SwitchTableViewCell ?? SwitchTableViewCell(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
-        var item = items[indexPath.row]
+        let item = items[indexPath.row]
         
         cell.selectionStyle = .none
         cell.textLabel?.text = item.title
         cell.detailTextLabel?.text = item.subtitle
-        cell.switchView.isOn = item.isOn
+        item.type.isScheduled { scheduled in
+            cell.switchView.isOn = scheduled
+        }
         cell.valueChangedBlock = { view in
-            item.isOn = view.isOn
+            if view.isOn {
+                item.type.schedule(title: "420 Get High 🙃") { error in }
+            } else {
+                item.type.unschedule()
+            }
         }
         
         return cell
@@ -91,22 +97,11 @@ extension ViewController {
 
 struct Item {
     let title: String
-    let subtitle: String
+    let subtitle: String?
     let type: AlarmType
-    var isOn: Bool {
-        didSet {
-            if isOn {
-                type.schedule(title: "420 Get High 🙃") { error in
-                    
-                }
-            } else {
-                type.unschedule()
-            }
-        }
-    }
     
-    static func make(title: String, subtitle: String, type: AlarmType) -> Item {
-        return Item(title: title, subtitle: subtitle, type: type, isOn: false)
+    static func make(title: String, subtitle: String?, type: AlarmType) -> Item {
+        return Item(title: title, subtitle: subtitle, type: type)
     }
 }
 

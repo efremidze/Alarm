@@ -40,12 +40,16 @@ enum AlarmType: String {
     func unschedule() {
         UNC.removePendingNotificationRequests(withIdentifiers: [rawValue])
     }
+    
+    func isScheduled(completionHandler: @escaping (Bool) -> Void) {
+        UNC.getPendingNotificationRequests { requests in DispatchQueue.main.async { completionHandler(requests.filter { $0.identifier == self.rawValue }.isEmpty) } }
+    }
 }
 
 struct Alarm {
     
     static func start(completionHandler: @escaping (Bool, Error?) -> Void) {
-        UNC.requestAuthorization(options: [.sound, .alert], completionHandler: completionHandler)
+        UNC.requestAuthorization(options: [.sound, .alert, .carPlay], completionHandler: completionHandler)
     }
     
     static func reset() {
