@@ -23,7 +23,8 @@ class ViewController: UITableViewController {
 //        self.navigationController?.navigationBar.shadowImage = UIImage()
 //        self.navigationItem.title = "420!"
         
-        self.tableView.tableHeaderView = UIView()
+        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "pattern")!)
+        self.tableView.tableHeaderView = UIImageView(image: UIImage(named: "header"))
         self.tableView.tableFooterView = UIView()
         
         Alarm.start { accepted, error in
@@ -54,8 +55,8 @@ extension ViewController {
         item.type.isScheduled { scheduled in
             cell.switchView.isOn = scheduled
         }
-        cell.valueChangedBlock = { view in
-            if view.isOn {
+        cell.valueChanged = { switchView in
+            if switchView.isOn {
                 item.type.schedule(title: "420 Get High 🙃") { error in }
             } else {
                 item.type.unschedule()
@@ -97,15 +98,15 @@ private class SwitchTableViewCell: UITableViewCell {
     
     lazy var switchView: UISwitch = { [unowned self] in
         let view = UISwitch()
-        view.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
+        view.addTarget(self, action: #selector(_valueChanged), for: .valueChanged)
         self.accessoryView = view
         return view
     }()
     
-    var valueChangedBlock: ((UISwitch) -> Void)?
+    var valueChanged: ((UISwitch) -> Void)?
     
-    @IBAction func valueChanged(sender: UISwitch) {
-        self.valueChangedBlock?(sender)
+    @IBAction func _valueChanged(sender: UISwitch) {
+        self.valueChanged?(sender)
     }
     
 }
