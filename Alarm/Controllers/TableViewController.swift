@@ -36,33 +36,44 @@ class TableViewController: UITableViewController {
 // MARK: - UITableViewDataSource
 extension TableViewController {
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        switch section {
+        case 0:
+            return items.count
+        default:
+            return 1
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reuseIdentifier = String(describing: SwitchTableViewCell.self)
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? SwitchTableViewCell ?? SwitchTableViewCell(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        
-        let item = items[indexPath.row]
-        
-        cell.selectionStyle = .none
-        cell.imageView?.image = UIImage(named: item.type.rawValue)
-        cell.imageView?.contentMode = .center
-        cell.textLabel?.text = item.title
-        cell.detailTextLabel?.text = item.subtitle
-        item.type.isScheduled { scheduled in
-            cell.switchView.isOn = scheduled
-        }
-        cell.valueChanged = { switchView in
-            if switchView.isOn {
-                item.type.schedule(title: Constants.defaultTitle) { error in }
-            } else {
-                item.type.unschedule()
+        switch indexPath.section {
+        case 0:
+            let reuseIdentifier = String(describing: SwitchTableViewCell.self)
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? SwitchTableViewCell ?? SwitchTableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
+            let item = items[indexPath.row]
+            cell.selectionStyle = .none
+            cell.imageView?.image = UIImage(named: item.type.rawValue)
+            cell.imageView?.contentMode = .center
+            cell.textLabel?.text = item.title
+            cell.detailTextLabel?.text = item.subtitle
+            item.type.isScheduled { scheduled in
+                cell.switchView.isOn = scheduled
             }
+            cell.valueChanged = { switchView in
+                if switchView.isOn {
+                    item.type.schedule(title: Constants.defaultTitle) { error in }
+                } else {
+                    item.type.unschedule()
+                }
+            }
+            return cell
+        default:
+            return UITableViewCell()
         }
-        
-        return cell
     }
     
 }
@@ -71,7 +82,16 @@ extension TableViewController {
 extension TableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Scheduled Alarms"
+        switch section {
+        case 0:
+            return "Scheduled Alarms"
+        default:
+            return nil
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
