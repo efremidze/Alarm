@@ -68,7 +68,7 @@ extension TableViewController {
             }
             cell.valueChanged = { switchView in
                 if switchView.isOn {
-                    item.type.schedule(title: Constants.defaultTitle) { error in }
+                    item.type.schedule { error in }
                 } else {
                     item.type.unschedule()
                 }

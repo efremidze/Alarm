@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Alarm.start { accepted, error in
             if accepted {
                 Once("Alarm.scheduled") {
-                    AlarmType.pm.schedule(title: Constants.defaultTitle) { error in }
+                    AlarmType.pm.schedule { error in }
                 }
             } else {
                 print("Notification access denied.")
