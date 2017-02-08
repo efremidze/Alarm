@@ -12,7 +12,8 @@ import RevealingSplashView
 class ViewController: UIViewController {
     
     lazy var splashView: RevealingSplashView = { [unowned self] in
-        let view = RevealingSplashView(iconImage: UIImage(named: "weed")!, iconInitialSize: CGSize(width: 100, height: 100), backgroundColor: .weedGreen)
+        let image = UIImage(named: "weed")!
+        let view = RevealingSplashView(iconImage: image, iconInitialSize: image.size, backgroundColor: .weedGreen)
         self.view.addSubview(view)
         return view
     }()
