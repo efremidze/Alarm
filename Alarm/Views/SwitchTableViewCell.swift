@@ -23,4 +23,11 @@ class SwitchTableViewCell: UITableViewCell {
         self.valueChanged?(sender)
     }
     
+    override func layoutSubviews() {
+        let image = self.imageView?.image
+        self.imageView?.image = UIImage(color: .white, size: CGSize(width: 16, height: 16))
+        super.layoutSubviews()
+        self.imageView?.image = image
+    }
+    
 }

@@ -15,16 +15,17 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "pattern")!)
+        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "pattern")!)
         self.tableView.tableHeaderView = {
             let view = UIView()
-            view.frame.size.height = 200
-//            view.backgroundColor = UIColor(patternImage: UIImage(named: "pattern")!)
+            view.frame.size.height = 150
             let imageView = UIImageView(image: UIImage(named: "weed"))
-            imageView.contentMode = .scaleAspectFit
             imageView.tintColor = .weedGreen
             view.addSubview(imageView)
-            imageView.constrainToEdges(UIEdgeInsets(top: 50, left: 0, bottom: -50, right: 0))
+            imageView.constrain {[
+                $0.centerXAnchor.constraint(equalTo: $0.superview!.centerXAnchor),
+                $0.centerYAnchor.constraint(equalTo: $0.superview!.centerYAnchor, constant: 25)
+            ]}
             return view
         }()
         self.tableView.tableFooterView = UIView()
@@ -46,6 +47,8 @@ extension TableViewController {
         let item = items[indexPath.row]
         
         cell.selectionStyle = .none
+        cell.imageView?.image = UIImage(named: item.type.rawValue)
+        cell.imageView?.contentMode = .center
         cell.textLabel?.text = item.title
         cell.detailTextLabel?.text = item.subtitle
         item.type.isScheduled { scheduled in
