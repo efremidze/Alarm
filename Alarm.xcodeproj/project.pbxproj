@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B35AE731E4B103300718800 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AE6A1E4B103300718800 /* TableViewController.swift */; };
+		8B35AE741E4B103300718800 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AE6B1E4B103300718800 /* ViewController.swift */; };
+		8B35AE751E4B103300718800 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AE6D1E4B103300718800 /* UIColorExtensions.swift */; };
+		8B35AE761E4B103300718800 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AE6E1E4B103300718800 /* UIViewExtensions.swift */; };
+		8B35AE771E4B103300718800 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AE701E4B103300718800 /* Alarm.swift */; };
+		8B35AE781E4B103300718800 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AE721E4B103300718800 /* Item.swift */; };
+		8B35AE7B1E4B109E00718800 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AE7A1E4B109E00718800 /* SwitchTableViewCell.swift */; };
 		8B396BF01E360A6100197142 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B396BEF1E360A6100197142 /* AppDelegate.swift */; };
-		8B396BF21E360A6100197142 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B396BF11E360A6100197142 /* ViewController.swift */; };
 		8B396BF51E360A6100197142 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B396BF31E360A6100197142 /* Main.storyboard */; };
 		8B396BF71E360A6100197142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B396BF61E360A6100197142 /* Assets.xcassets */; };
 		8B396BFA1E360A6100197142 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B396BF81E360A6100197142 /* LaunchScreen.storyboard */; };
@@ -21,9 +27,9 @@
 		8B396C191E360A6200197142 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B396C181E360A6200197142 /* NotificationController.swift */; };
 		8B396C1B1E360A6200197142 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B396C1A1E360A6200197142 /* ComplicationController.swift */; };
 		8B396C1D1E360A6200197142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B396C1C1E360A6200197142 /* Assets.xcassets */; };
-		8B980C071E360B0C00C815BD /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B980C061E360B0C00C815BD /* Alarm.swift */; };
-		8BB2F7F21E47332E00A674C9 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2F7F11E47332E00A674C9 /* UIColorExtensions.swift */; };
-		8BB2F7F41E47335400A674C9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2F7F31E47335400A674C9 /* Item.swift */; };
+		8B7BBC631E4B166800B68727 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BBC621E4B166800B68727 /* FoundationExtensions.swift */; };
+		8B7BBC651E4B16FE00B68727 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BBC641E4B16FE00B68727 /* Constants.swift */; };
+		B8AD6F14A6B1E650656A854F /* Pods_Alarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A801D992EFBD695E81AF5F7 /* Pods_Alarm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,9 +75,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A801D992EFBD695E81AF5F7 /* Pods_Alarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		118A6386BE401043B29AED96 /* Pods-Alarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm/Pods-Alarm.debug.xcconfig"; sourceTree = "<group>"; };
+		8B35AE6A1E4B103300718800 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		8B35AE6B1E4B103300718800 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B35AE6D1E4B103300718800 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		8B35AE6E1E4B103300718800 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		8B35AE701E4B103300718800 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		8B35AE721E4B103300718800 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		8B35AE7A1E4B109E00718800 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		8B396BEC1E360A6100197142 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B396BEF1E360A6100197142 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B396BF11E360A6100197142 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B396BF41E360A6100197142 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B396BF61E360A6100197142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B396BF91E360A6100197142 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -88,16 +102,24 @@
 		8B396C1A1E360A6200197142 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		8B396C1C1E360A6200197142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B396C1E1E360A6200197142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B980C061E360B0C00C815BD /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
-		8BB2F7F11E47332E00A674C9 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
-		8BB2F7F31E47335400A674C9 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		8B7BBC621E4B166800B68727 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		8B7BBC641E4B16FE00B68727 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8FF3B2A339418A6939E136EF /* Pods-Alarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm/Pods-Alarm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		608114CCE82674A2787A39A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8B396BE91E360A6100197142 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AD6F14A6B1E650656A854F /* Pods_Alarm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +133,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C4F17B009CFBC0E949C3106 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				118A6386BE401043B29AED96 /* Pods-Alarm.debug.xcconfig */,
+				8FF3B2A339418A6939E136EF /* Pods-Alarm.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B35AE691E4B103300718800 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B35AE6A1E4B103300718800 /* TableViewController.swift */,
+				8B35AE6B1E4B103300718800 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8B35AE6C1E4B103300718800 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B7BBC621E4B166800B68727 /* FoundationExtensions.swift */,
+				8B35AE6D1E4B103300718800 /* UIColorExtensions.swift */,
+				8B35AE6E1E4B103300718800 /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8B35AE6F1E4B103300718800 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				8B35AE701E4B103300718800 /* Alarm.swift */,
+				8B7BBC641E4B16FE00B68727 /* Constants.swift */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		8B35AE711E4B103300718800 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B35AE721E4B103300718800 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B35AE791E4B109200718800 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B35AE7A1E4B109E00718800 /* SwitchTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8B396BE31E360A6100197142 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +193,8 @@
 				8B396C021E360A6200197142 /* Alarm WatchKit App */,
 				8B396C111E360A6200197142 /* Alarm WatchKit Extension */,
 				8B396BED1E360A6100197142 /* Products */,
+				2C4F17B009CFBC0E949C3106 /* Pods */,
+				CDA3B9EDEA77E6756EE7165E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,15 +211,16 @@
 		8B396BEE1E360A6100197142 /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
-				8B980C061E360B0C00C815BD /* Alarm.swift */,
 				8B396BEF1E360A6100197142 /* AppDelegate.swift */,
-				8B396BF11E360A6100197142 /* ViewController.swift */,
-				8BB2F7F31E47335400A674C9 /* Item.swift */,
-				8BB2F7F11E47332E00A674C9 /* UIColorExtensions.swift */,
-				8B396BF31E360A6100197142 /* Main.storyboard */,
 				8B396BF61E360A6100197142 /* Assets.xcassets */,
-				8B396BF81E360A6100197142 /* LaunchScreen.storyboard */,
+				8B35AE691E4B103300718800 /* Controllers */,
+				8B35AE6C1E4B103300718800 /* Extensions */,
 				8B396BFB1E360A6100197142 /* Info.plist */,
+				8B396BF81E360A6100197142 /* LaunchScreen.storyboard */,
+				8B35AE6F1E4B103300718800 /* Libraries */,
+				8B396BF31E360A6100197142 /* Main.storyboard */,
+				8B35AE711E4B103300718800 /* Model */,
+				8B35AE791E4B109200718800 /* Views */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -179,6 +257,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CDA3B9EDEA77E6756EE7165E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A801D992EFBD695E81AF5F7 /* Pods_Alarm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,10 +272,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B396C291E360A6200197142 /* Build configuration list for PBXNativeTarget "Alarm" */;
 			buildPhases = (
+				5C1481CF294B27D84BD6851A /* [CP] Check Pods Manifest.lock */,
 				8B396BE81E360A6100197142 /* Sources */,
 				8B396BE91E360A6100197142 /* Frameworks */,
 				8B396BEA1E360A6100197142 /* Resources */,
 				8B396C281E360A6200197142 /* Embed Watch Content */,
+				2F789C68409BD78008757CE6 /* [CP] Embed Pods Frameworks */,
+				28CCE4A93592E67C1E3313CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +296,7 @@
 			buildPhases = (
 				8B396BFC1E360A6200197142 /* Resources */,
 				8B396C241E360A6200197142 /* Embed App Extensions */,
+				608114CCE82674A2787A39A9 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -312,16 +402,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		28CCE4A93592E67C1E3313CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Alarm/Pods-Alarm-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F789C68409BD78008757CE6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Alarm/Pods-Alarm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C1481CF294B27D84BD6851A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8B396BE81E360A6100197142 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BB2F7F41E47335400A674C9 /* Item.swift in Sources */,
-				8B396BF21E360A6100197142 /* ViewController.swift in Sources */,
+				8B35AE741E4B103300718800 /* ViewController.swift in Sources */,
+				8B35AE7B1E4B109E00718800 /* SwitchTableViewCell.swift in Sources */,
+				8B35AE761E4B103300718800 /* UIViewExtensions.swift in Sources */,
 				8B396BF01E360A6100197142 /* AppDelegate.swift in Sources */,
-				8B980C071E360B0C00C815BD /* Alarm.swift in Sources */,
-				8BB2F7F21E47332E00A674C9 /* UIColorExtensions.swift in Sources */,
+				8B35AE731E4B103300718800 /* TableViewController.swift in Sources */,
+				8B7BBC651E4B16FE00B68727 /* Constants.swift in Sources */,
+				8B35AE781E4B103300718800 /* Item.swift in Sources */,
+				8B35AE751E4B103300718800 /* UIColorExtensions.swift in Sources */,
+				8B35AE771E4B103300718800 /* Alarm.swift in Sources */,
+				8B7BBC631E4B166800B68727 /* FoundationExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +687,7 @@
 		};
 		8B396C2A1E360A6200197142 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 118A6386BE401043B29AED96 /* Pods-Alarm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NNRNHY2N8B;
@@ -557,6 +701,7 @@
 		};
 		8B396C2B1E360A6200197142 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FF3B2A339418A6939E136EF /* Pods-Alarm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NNRNHY2N8B;
