@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        UISwitch.appearance().onTintColor = .weedGreen
+        
         return true
     }
     

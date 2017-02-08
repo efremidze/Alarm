@@ -58,7 +58,10 @@ extension TableViewController {
             cell.selectionStyle = .none
             cell.imageView?.image = UIImage(named: item.type.rawValue)
             cell.imageView?.contentMode = .center
+            cell.imageView?.tintColor = .weedGreen
             cell.textLabel?.text = item.title
+            cell.textLabel?.textColor = UIColor(white: 0.22, alpha: 1)
+            cell.textLabel?.font = .preferredFont(forTextStyle: .body)
             cell.detailTextLabel?.text = item.subtitle
             item.type.isScheduled { scheduled in
                 cell.switchView.isOn = scheduled
