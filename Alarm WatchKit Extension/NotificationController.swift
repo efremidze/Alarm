@@ -2,7 +2,7 @@
 //  NotificationController.swift
 //  Alarm WatchKit Extension
 //
-//  Created by Lasha Efremidze on 1/9/17.
+//  Created by Lasha Efremidze on 1/23/17.
 //  Copyright © 2017 Lasha Efremidze. All rights reserved.
 //
 
