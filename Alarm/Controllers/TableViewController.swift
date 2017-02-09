@@ -29,6 +29,7 @@ class TableViewController: UITableViewController {
             return view
         }()
         self.tableView.tableFooterView = UIView()
+        self.tableView.keyboardDismissMode = .interactive
     }
     
 }
@@ -60,7 +61,7 @@ extension TableViewController {
             cell.imageView?.contentMode = .center
             cell.imageView?.tintColor = .weedGreen
             cell.textLabel?.text = item.title
-            cell.textLabel?.textColor = UIColor(white: 0.22, alpha: 1)
+            cell.textLabel?.textColor = .dark
             cell.textLabel?.font = .preferredFont(forTextStyle: .body)
             cell.detailTextLabel?.text = item.subtitle
             item.type.isScheduled { scheduled in
@@ -75,7 +76,22 @@ extension TableViewController {
             }
             return cell
         default:
-            return UITableViewCell()
+            let reuseIdentifier = String(describing: TextFieldTableViewCell.self)
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? TextFieldTableViewCell ?? TextFieldTableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
+            cell.textField.placeholder = "Title";
+            cell.textField.text = Constants.defaultTitle
+            cell.textField.font = .preferredFont(forTextStyle: .body)
+            cell.textField.textColor = .dark
+            cell.textField.lineColor = .clear
+            cell.textField.selectedLineColor = .clear
+            cell.textField.titleColor = .weedGreen
+            cell.textField.selectedTitleColor = .weedGreen
+            cell.textField.lineHeight = 0
+            cell.textField.selectedLineHeight = 0
+            cell.editingChanged = { textField in
+                print(textField.text)
+            }
+            return cell
         }
     }
     
@@ -88,10 +104,21 @@ extension TableViewController {
         switch section {
         case 0:
             return "Scheduled Alarms"
+        case 1:
+            return "Options"
         default:
             return nil
         }
     }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        switch indexPath.section {
+//        case 1:
+//            return 66
+//        default:
+//            return 44
+//        }
+//    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

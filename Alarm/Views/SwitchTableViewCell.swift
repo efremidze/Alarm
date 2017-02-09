@@ -15,7 +15,7 @@ class SwitchTableViewCell: UITableViewCell {
         view.addTarget(self, action: #selector(_valueChanged), for: .valueChanged)
         self.accessoryView = view
         return view
-        }()
+    }()
     
     var valueChanged: ((UISwitch) -> Void)?
     
