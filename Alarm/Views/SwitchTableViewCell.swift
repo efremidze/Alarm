@@ -24,10 +24,13 @@ class SwitchTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
-        let image = self.imageView?.image
-        self.imageView?.image = UIImage(color: .white, size: CGSize(width: 16, height: 16))
         super.layoutSubviews()
-        self.imageView?.image = image
+        
+        imageView?.frame.origin.x = 8
+        imageView?.frame.size = CGSize(width: 38, height: 38)
+        imageView?.center.y = contentView.center.y
+        
+        textLabel?.frame.origin.x = 54
     }
     
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let items: [Item] = [Item.make(title: "4:20 AM", subtitle: nil, type: .am), Item.make(title: "4:20 PM", subtitle: nil, type: .pm), Item.make(title: "4/20", subtitle: nil, type: .day)]
+    let items: [Item] = [Item.make(title: "4:20 AM", subtitle: nil, type: .am), Item.make(title: "4:20 PM", subtitle: nil, type: .pm), Item.make(title: "April 20", subtitle: nil, type: .day)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,23 +75,29 @@ extension TableViewController {
                 }
             }
             return cell
-        default:
-            let reuseIdentifier = String(describing: TextFieldTableViewCell.self)
-            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? TextFieldTableViewCell ?? TextFieldTableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
-            cell.textField.placeholder = "Title";
-            cell.textField.text = Constants.defaultTitle
-            cell.textField.font = .preferredFont(forTextStyle: .body)
-            cell.textField.textColor = .dark
-            cell.textField.lineColor = .clear
-            cell.textField.selectedLineColor = .clear
-            cell.textField.titleColor = .weedGreen
-            cell.textField.selectedTitleColor = .weedGreen
-            cell.textField.lineHeight = 0
-            cell.textField.selectedLineHeight = 0
-            cell.editingChanged = { textField in
-                print(textField.text)
-            }
+//        case 1:
+//            let reuseIdentifier = String(describing: TextFieldTableViewCell.self)
+//            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? TextFieldTableViewCell ?? TextFieldTableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
+//            cell.textField.placeholder = "Title";
+//            cell.textField.text = Constants.defaultTitle
+//            cell.textField.font = .preferredFont(forTextStyle: .body)
+//            cell.textField.textColor = .dark
+//            cell.textField.lineColor = .clear
+//            cell.textField.selectedLineColor = .clear
+//            cell.textField.titleColor = .weedGreen
+//            cell.textField.selectedTitleColor = .weedGreen
+//            cell.textField.lineHeight = 0
+//            cell.textField.selectedLineHeight = 0
+//            cell.editingChanged = { textField in
+//                print(textField.text)
+//            }
+//            return cell
+        case 1:
+            let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+            cell.textLabel?.text = "Send Feedback"
             return cell
+        default:
+            return UITableViewCell()
         }
     }
     
@@ -100,12 +106,21 @@ extension TableViewController {
 // MARK: - UITableViewDelegate
 extension TableViewController {
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            cell.separatorInset.left = 54
+        default:
+            break
+        }
+        cell.preservesSuperviewLayoutMargins = false
+        cell.layoutMargins = UIEdgeInsets()
+    }
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
             return "Scheduled Alarms"
-        case 1:
-            return "Options"
         default:
             return nil
         }
@@ -122,6 +137,8 @@ extension TableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        
     }
     
 }

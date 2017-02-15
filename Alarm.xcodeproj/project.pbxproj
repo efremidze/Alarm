@@ -30,7 +30,6 @@
 		8B7BBC631E4B166800B68727 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BBC621E4B166800B68727 /* FoundationExtensions.swift */; };
 		8B7BBC651E4B16FE00B68727 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BBC641E4B16FE00B68727 /* Constants.swift */; };
 		8B903EF31E4BDE3D0045C5F6 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B903EF21E4BDE3D0045C5F6 /* TextFieldTableViewCell.swift */; };
-		8BD3429C1E4B26B40005243E /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3429B1E4B26B40005243E /* UIImageExtensions.swift */; };
 		B8AD6F14A6B1E650656A854F /* Pods_Alarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A801D992EFBD695E81AF5F7 /* Pods_Alarm.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +106,6 @@
 		8B7BBC621E4B166800B68727 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		8B7BBC641E4B16FE00B68727 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8B903EF21E4BDE3D0045C5F6 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
-		8BD3429B1E4B26B40005243E /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		8FF3B2A339418A6939E136EF /* Pods-Alarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm/Pods-Alarm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,7 +158,6 @@
 			children = (
 				8B7BBC621E4B166800B68727 /* FoundationExtensions.swift */,
 				8B35AE6D1E4B103300718800 /* UIColorExtensions.swift */,
-				8BD3429B1E4B26B40005243E /* UIImageExtensions.swift */,
 				8B35AE6E1E4B103300718800 /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
@@ -476,7 +473,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B35AE741E4B103300718800 /* ViewController.swift in Sources */,
-				8BD3429C1E4B26B40005243E /* UIImageExtensions.swift in Sources */,
 				8B35AE7B1E4B109E00718800 /* SwitchTableViewCell.swift in Sources */,
 				8B903EF31E4BDE3D0045C5F6 /* TextFieldTableViewCell.swift in Sources */,
 				8B35AE761E4B103300718800 /* UIViewExtensions.swift in Sources */,
