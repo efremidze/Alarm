@@ -13,7 +13,7 @@ private let UNC = UNUserNotificationCenter.current()
 enum AlarmType: String {
     case am, pm, day
     
-    private func dateComponents() -> DateComponents {
+    private var dateComponents: DateComponents {
         switch self {
         case .am:
             var components = DateComponents()
@@ -33,8 +33,9 @@ enum AlarmType: String {
         }
     }
     
-    func schedule(title: String, completionHandler: ((Error?) -> Void)? = nil) {
-        UNC.add(identifier: rawValue, title: title, dateComponents: dateComponents(), withCompletionHandler: completionHandler)
+    func schedule(completionHandler: ((Error?) -> Void)? = nil) {
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        UNC.add(title: "", body: Constants.defaultTitle, identifier: rawValue, trigger: trigger, withCompletionHandler: completionHandler)
     }
     
     func unschedule() {
@@ -56,14 +57,19 @@ struct Alarm {
         UNC.removeAllPendingNotificationRequests()
     }
     
+    static func test(completionHandler: ((Error?) -> Void)? = nil) {
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        UNC.add(title: "", body: Constants.defaultTitle, identifier: "test", trigger: trigger, withCompletionHandler: completionHandler)
+    }
+    
 }
 
 private extension UNUserNotificationCenter {
     
-    func add(identifier: String, title: String, dateComponents: DateComponents, withCompletionHandler completionHandler: ((Error?) -> Void)? = nil) {
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+    func add(title: String, body: String, identifier: String, trigger: UNNotificationTrigger?, withCompletionHandler completionHandler: ((Error?) -> Void)? = nil) {
         let content = UNMutableNotificationContent()
         content.title = title
+        content.body = body
         content.sound = .default()
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         add(request, withCompletionHandler: completionHandler)

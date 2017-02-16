@@ -29,7 +29,7 @@
 		8B396C1D1E360A6200197142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B396C1C1E360A6200197142 /* Assets.xcassets */; };
 		8B7BBC631E4B166800B68727 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BBC621E4B166800B68727 /* FoundationExtensions.swift */; };
 		8B7BBC651E4B16FE00B68727 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7BBC641E4B16FE00B68727 /* Constants.swift */; };
-		8BD3429C1E4B26B40005243E /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3429B1E4B26B40005243E /* UIImageExtensions.swift */; };
+		8B903EF31E4BDE3D0045C5F6 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B903EF21E4BDE3D0045C5F6 /* TextFieldTableViewCell.swift */; };
 		B8AD6F14A6B1E650656A854F /* Pods_Alarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A801D992EFBD695E81AF5F7 /* Pods_Alarm.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,7 +105,7 @@
 		8B396C1E1E360A6200197142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B7BBC621E4B166800B68727 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		8B7BBC641E4B16FE00B68727 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		8BD3429B1E4B26B40005243E /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		8B903EF21E4BDE3D0045C5F6 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		8FF3B2A339418A6939E136EF /* Pods-Alarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm/Pods-Alarm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,7 +158,6 @@
 			children = (
 				8B7BBC621E4B166800B68727 /* FoundationExtensions.swift */,
 				8B35AE6D1E4B103300718800 /* UIColorExtensions.swift */,
-				8BD3429B1E4B26B40005243E /* UIImageExtensions.swift */,
 				8B35AE6E1E4B103300718800 /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
@@ -185,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				8B35AE7A1E4B109E00718800 /* SwitchTableViewCell.swift */,
+				8B903EF21E4BDE3D0045C5F6 /* TextFieldTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,6 +282,7 @@
 				8B396C281E360A6200197142 /* Embed Watch Content */,
 				2F789C68409BD78008757CE6 /* [CP] Embed Pods Frameworks */,
 				28CCE4A93592E67C1E3313CE /* [CP] Copy Pods Resources */,
+				8B903EF41E4BE5870045C5F6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -451,6 +452,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		8B903EF41E4BE5870045C5F6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 86bf271a95275db9bed14c5a063edbeac7622635 ee3fa45fd6e1296f88297acd1281248b587d91ed8c292b82c73e1d3beeaa2c62";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -459,8 +473,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B35AE741E4B103300718800 /* ViewController.swift in Sources */,
-				8BD3429C1E4B26B40005243E /* UIImageExtensions.swift in Sources */,
 				8B35AE7B1E4B109E00718800 /* SwitchTableViewCell.swift in Sources */,
+				8B903EF31E4BDE3D0045C5F6 /* TextFieldTableViewCell.swift in Sources */,
 				8B35AE761E4B103300718800 /* UIViewExtensions.swift in Sources */,
 				8B396BF01E360A6100197142 /* AppDelegate.swift in Sources */,
 				8B35AE731E4B103300718800 /* TableViewController.swift in Sources */,
