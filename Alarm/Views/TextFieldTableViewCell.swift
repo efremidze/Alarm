@@ -30,3 +30,21 @@ class TextFieldTableViewCell: UITableViewCell {
     }
     
 }
+
+class FloatingTextField: SkyFloatingLabelTextField {
+    
+//    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+//        var rect = super.textRect(forBounds: bounds)
+//        rect.origin.y = 0
+//        rect.size.height = bounds.size.height
+//        return rect
+//    }
+    
+//    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+//        var rect = super.placeholderRect(forBounds: bounds)
+//        rect.origin.y = 0
+//        rect.size.height = bounds.height
+//        return rect
+//    }
+    
+}

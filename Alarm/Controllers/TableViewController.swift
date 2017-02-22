@@ -92,12 +92,10 @@ extension TableViewController {
 //                print(textField.text)
 //            }
 //            return cell
-        case 1:
+        default:
             let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
             cell.textLabel?.text = "Send Feedback"
             return cell
-        default:
-            return UITableViewCell()
         }
     }
     
@@ -110,11 +108,11 @@ extension TableViewController {
         switch indexPath.section {
         case 0:
             cell.separatorInset.left = 54
+            cell.preservesSuperviewLayoutMargins = false
+            cell.layoutMargins = UIEdgeInsets()
         default:
             break
         }
-        cell.preservesSuperviewLayoutMargins = false
-        cell.layoutMargins = UIEdgeInsets()
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -126,19 +124,15 @@ extension TableViewController {
         }
     }
     
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        switch indexPath.section {
-//        case 1:
-//            return 66
-//        default:
-//            return 44
-//        }
-//    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        
+        switch indexPath.section {
+        case 1:
+            HelpshiftSupport.showFAQs(self.parent!, with: nil)
+        default:
+            break
+        }
     }
     
 }

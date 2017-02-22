@@ -10,6 +10,7 @@ target 'Alarm' do
   pod 'Crashlytics', '~> 3.8'
   pod 'RevealingSplashView', '~> 0.1'
   pod 'SkyFloatingLabelTextField', '~> 2.0'
+  pod 'Helpshift', '5.9.3-bitcode'
 end
 
 #target 'Alarm WatchKit App' do
