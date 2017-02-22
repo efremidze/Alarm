@@ -51,7 +51,7 @@ extension UIView {
             $0.leadingAnchor.constraint(equalTo: $0.superview!.leadingAnchor, constant: inset.left),
             $0.bottomAnchor.constraint(equalTo: $0.superview!.bottomAnchor, constant: inset.bottom),
             $0.trailingAnchor.constraint(equalTo: $0.superview!.trailingAnchor, constant: inset.right)
-            ]}
+        ]}
     }
     
     @discardableResult

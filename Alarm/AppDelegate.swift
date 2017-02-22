@@ -23,16 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Fabric.with([Crashlytics.self])
         
-        Alarm.start { accepted, error in
-            if accepted {
-                Once("Alarm.scheduled") {
-                    AlarmType.pm.schedule { error in }
-                }
-            } else {
-                print("Notification access denied.")
-            }
-        }
-        
         UINavigationBar.appearance().setBackgroundImage(UIImage(color: .weedGreen), for: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().tintColor = .white

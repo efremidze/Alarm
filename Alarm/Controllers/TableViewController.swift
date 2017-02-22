@@ -30,6 +30,20 @@ class TableViewController: UITableViewController {
         }()
         self.tableView.tableFooterView = UIView()
         self.tableView.keyboardDismissMode = .interactive
+        
+        Alarm.start { accepted, error in
+            if accepted {
+                Once("Alarm.scheduled") {
+                    AlarmType.pm.schedule { error in
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            } else {
+                print("Notification access denied.")
+            }
+        }
     }
     
 }
