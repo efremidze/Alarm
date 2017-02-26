@@ -57,10 +57,10 @@ struct Alarm {
         UNC.removeAllPendingNotificationRequests()
     }
     
-    static func test(completionHandler: ((Error?) -> Void)? = nil) {
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        UNC.add(title: "", body: Constants.defaultTitle, identifier: "test", trigger: trigger, withCompletionHandler: completionHandler)
-    }
+//    static func test(completionHandler: ((Error?) -> Void)? = nil) {
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+//        UNC.add(title: "", body: Constants.defaultTitle, identifier: "test", trigger: trigger, withCompletionHandler: completionHandler)
+//    }
     
 }
 

@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let items: [Item] = [Item.make(title: "4:20 AM", subtitle: nil, type: .am), Item.make(title: "4:20 PM", subtitle: nil, type: .pm), Item.make(title: "April 20", subtitle: nil, type: .day)]
+    let items = Item.all()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,18 +31,8 @@ class TableViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         self.tableView.keyboardDismissMode = .interactive
         
-        Alarm.start { accepted, error in
-            if accepted {
-                Once("Alarm.scheduled") {
-                    AlarmType.pm.schedule { error in
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-                    }
-                }
-            } else {
-                print("Notification access denied.")
-            }
+        NC.addObserver(forName: .alarmsChanged, object: nil, queue: nil) { [weak self] notification in
+            self?.tableView.reloadData()
         }
     }
     
@@ -78,8 +68,8 @@ extension TableViewController {
             cell.textLabel?.textColor = .dark
             cell.textLabel?.font = .preferredFont(forTextStyle: .body)
             cell.detailTextLabel?.text = item.subtitle
-            item.type.isScheduled { scheduled in
-                cell.switchView.isOn = scheduled
+            item.type.isScheduled { [weak cell] scheduled in
+                cell?.switchView.isOn = scheduled
             }
             cell.valueChanged = { switchView in
                 if switchView.isOn {
@@ -89,23 +79,6 @@ extension TableViewController {
                 }
             }
             return cell
-//        case 1:
-//            let reuseIdentifier = String(describing: TextFieldTableViewCell.self)
-//            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? TextFieldTableViewCell ?? TextFieldTableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
-//            cell.textField.placeholder = "Title";
-//            cell.textField.text = Constants.defaultTitle
-//            cell.textField.font = .preferredFont(forTextStyle: .body)
-//            cell.textField.textColor = .dark
-//            cell.textField.lineColor = .clear
-//            cell.textField.selectedLineColor = .clear
-//            cell.textField.titleColor = .weedGreen
-//            cell.textField.selectedTitleColor = .weedGreen
-//            cell.textField.lineHeight = 0
-//            cell.textField.selectedLineHeight = 0
-//            cell.editingChanged = { textField in
-//                print(textField.text)
-//            }
-//            return cell
         default:
             let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
             cell.textLabel?.text = "Send Feedback"

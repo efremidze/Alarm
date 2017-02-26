@@ -1,5 +1,5 @@
 PODS:
-  - Crashlytics (3.8.3):
+  - Crashlytics (3.8.4):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
   - Helpshift (5.9.3-bitcode)
@@ -14,7 +14,7 @@ DEPENDENCIES:
   - SkyFloatingLabelTextField (~> 2.0)
 
 SPEC CHECKSUMS:
-  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   Helpshift: 7707e7324702f2240f30aecf7bd26a4d00e25d13
   RevealingSplashView: 501dd03d975ba2c4165dd463ea1c7c407fb9d13e

@@ -29,6 +29,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         UISwitch.appearance().onTintColor = .weedGreen
         
+        Alarm.start { accepted, error in
+            if accepted {
+                Defaults.once(Constants.scheduledAlarm) {
+                    AlarmType.pm.schedule { error in
+                        NC.post(name: .alarmsChanged, object: nil)
+                    }
+                }
+            }
+        }
+        
         return true
     }
     
