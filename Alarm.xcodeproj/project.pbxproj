@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B0816A61E62BB68002B3C18 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0816A51E62BB68002B3C18 /* SessionManager.swift */; };
+		8B0816A71E62BB85002B3C18 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0816A51E62BB68002B3C18 /* SessionManager.swift */; };
 		8B35AE731E4B103300718800 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AE6A1E4B103300718800 /* TableViewController.swift */; };
 		8B35AE741E4B103300718800 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AE6B1E4B103300718800 /* ViewController.swift */; };
 		8B35AE7B1E4B109E00718800 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35AE7A1E4B109E00718800 /* SwitchTableViewCell.swift */; };
@@ -79,6 +81,9 @@
 /* Begin PBXFileReference section */
 		0A801D992EFBD695E81AF5F7 /* Pods_Alarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		118A6386BE401043B29AED96 /* Pods-Alarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm/Pods-Alarm.debug.xcconfig"; sourceTree = "<group>"; };
+		8B08169F1E62AF3A002B3C18 /* Alarm WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Alarm WatchKit App.entitlements"; sourceTree = "<group>"; };
+		8B0816A01E62AF43002B3C18 /* Alarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Alarm.entitlements; sourceTree = "<group>"; };
+		8B0816A51E62BB68002B3C18 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		8B35AE6A1E4B103300718800 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		8B35AE6B1E4B103300718800 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B35AE7A1E4B109E00718800 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
@@ -187,6 +192,7 @@
 		8B396BEE1E360A6100197142 /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				8B0816A01E62AF43002B3C18 /* Alarm.entitlements */,
 				8BF110561E629CE6006FC450 /* Alarm.swift */,
 				8B396BEF1E360A6100197142 /* AppDelegate.swift */,
 				8B396BF61E360A6100197142 /* Assets.xcassets */,
@@ -198,6 +204,7 @@
 				8B396BF31E360A6100197142 /* Main.storyboard */,
 				8BC0828C1E5D8EF8003EAFE4 /* ObjC-Bridge.h */,
 				8B8D078E1E60E6FC0059A88D /* SharedExtensions.swift */,
+				8B0816A51E62BB68002B3C18 /* SessionManager.swift */,
 				8B35AE791E4B109200718800 /* Views */,
 			);
 			path = Alarm;
@@ -206,6 +213,7 @@
 		8B396C021E360A6200197142 /* Alarm WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				8B08169F1E62AF3A002B3C18 /* Alarm WatchKit App.entitlements */,
 				8B396C031E360A6200197142 /* Interface.storyboard */,
 				8B396C061E360A6200197142 /* Assets.xcassets */,
 				8B396C081E360A6200197142 /* Info.plist */,
@@ -318,11 +326,21 @@
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = NNRNHY2N8B;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					8B396BFD1E360A6200197142 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = NNRNHY2N8B;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					8B396C0C1E360A6200197142 = {
 						CreatedOnToolsVersion = 8.2;
@@ -455,6 +473,7 @@
 				8B35AE7B1E4B109E00718800 /* SwitchTableViewCell.swift in Sources */,
 				8B903EF31E4BDE3D0045C5F6 /* TextFieldTableViewCell.swift in Sources */,
 				8B396BF01E360A6100197142 /* AppDelegate.swift in Sources */,
+				8B0816A61E62BB68002B3C18 /* SessionManager.swift in Sources */,
 				8B35AE731E4B103300718800 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,6 +488,7 @@
 				8B396C171E360A6200197142 /* ExtensionDelegate.swift in Sources */,
 				8BF1105A1E629E72006FC450 /* Item.swift in Sources */,
 				8BF1105B1E629E77006FC450 /* Alarm.swift in Sources */,
+				8B0816A71E62BB85002B3C18 /* SessionManager.swift in Sources */,
 				8B396C151E360A6200197142 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +668,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Alarm WatchKit App/Alarm WatchKit App.entitlements";
 				DEVELOPMENT_TEAM = NNRNHY2N8B;
 				IBSC_MODULE = Alarm_WatchKit_Extension;
 				INFOPLIST_FILE = "Alarm WatchKit App/Info.plist";
@@ -666,6 +687,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Alarm WatchKit App/Alarm WatchKit App.entitlements";
 				DEVELOPMENT_TEAM = NNRNHY2N8B;
 				IBSC_MODULE = Alarm_WatchKit_Extension;
 				INFOPLIST_FILE = "Alarm WatchKit App/Info.plist";
@@ -684,6 +706,7 @@
 			baseConfigurationReference = 118A6386BE401043B29AED96 /* Pods-Alarm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Alarm/Alarm.entitlements;
 				DEVELOPMENT_TEAM = NNRNHY2N8B;
 				INFOPLIST_FILE = Alarm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -699,6 +722,7 @@
 			baseConfigurationReference = 8FF3B2A339418A6939E136EF /* Pods-Alarm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Alarm/Alarm.entitlements;
 				DEVELOPMENT_TEAM = NNRNHY2N8B;
 				INFOPLIST_FILE = Alarm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
