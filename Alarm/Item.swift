@@ -13,7 +13,7 @@ struct Item {
     let subtitle: String?
     let type: AlarmType
     
-    static func make(title: String, subtitle: String?, type: AlarmType) -> Item {
-        return Item(title: title, subtitle: subtitle, type: type)
+    static func all() -> [Item] {
+        return [Item(title: "4:20 AM", subtitle: nil, type: .am), Item(title: "4:20 PM", subtitle: nil, type: .pm), Item(title: "April 20", subtitle: nil, type: .day)]
     }
 }

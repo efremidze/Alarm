@@ -20,7 +20,10 @@ class ViewController: UIViewController {
     
     lazy var tableView: TableViewController = { [unowned self] in
         let viewController = TableViewController(style: .grouped)
+        viewController.willMove(toParentViewController: self)
+        self.addChildViewController(viewController)
         self.view.addSubview(viewController.view)
+        viewController.didMove(toParentViewController: self)
         viewController.view.constrainToEdges()
         return viewController
     }()
