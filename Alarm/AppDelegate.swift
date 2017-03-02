@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         HelpshiftCore.initialize(with: HelpshiftAll.sharedInstance())
-        HelpshiftCore.install(forApiKey: "554fb19c87c9f4bd6d171e77226d0e5f", domainName: "morevoltage.helpshift.com", appID: "morevoltage_platform_20151213231950676-0208f040b50d0d4")
+        HelpshiftCore.install(forApiKey: "d2fb09a5aab5d78081bea7e3263f2965", domainName: "morevoltage.helpshift.com", appID: "morevoltage_platform_20170222092520006-a5b526294f4d663")
         
         Fabric.with([Crashlytics.self])
         

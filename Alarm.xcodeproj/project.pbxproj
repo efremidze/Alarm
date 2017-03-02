@@ -885,6 +885,7 @@
 				8B51C9291E63A3D60029D446 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
