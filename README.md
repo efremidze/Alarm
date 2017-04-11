@@ -1,6 +1,10 @@
-# Alarm
+# 420! Alarm
 
 [Download on the App Store](https://itunes.apple.com/us/app/420/id1194325430?ls=1&mt=8)
+
+We all need time to kick back and relax. With 420! you'll get exactly that: a simple alarm that goes off to remind you, on your iOS device or Apple Watch, to take a break. Because life is tough, and it should be, but you've gotta take a step back and chill out every once and a while.
+
+<img src="https://raw.githubusercontent.com/efremidze/Alarm/master/screenshots/en-US/iPhone7-0-d41d8cd98f00b204e9800998ecf8427e.png" width="320">
 
 ## Contributing
 
