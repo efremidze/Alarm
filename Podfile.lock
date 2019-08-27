@@ -1,25 +1,20 @@
 PODS:
-  - Crashlytics (3.8.4):
-    - Fabric (~> 1.6.3)
-  - Fabric (1.6.11)
-  - Helpshift (5.9.3-bitcode)
-  - RevealingSplashView (0.1.0)
-  - SkyFloatingLabelTextField (2.0.1)
+  - RevealingSplashView (0.6.0)
+  - SkyFloatingLabelTextField (3.7.0)
 
 DEPENDENCIES:
-  - Crashlytics (~> 3.8)
-  - Fabric (~> 1.6)
-  - Helpshift (= 5.9.3-bitcode)
-  - RevealingSplashView (~> 0.1)
-  - SkyFloatingLabelTextField (~> 2.0)
+  - RevealingSplashView (~> 0.2)
+  - SkyFloatingLabelTextField (~> 3.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RevealingSplashView
+    - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
-  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
-  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
-  Helpshift: 7707e7324702f2240f30aecf7bd26a4d00e25d13
-  RevealingSplashView: 501dd03d975ba2c4165dd463ea1c7c407fb9d13e
-  SkyFloatingLabelTextField: 070e749632ffd608d6fd9db3fa488a822524997c
+  RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
+  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
 
-PODFILE CHECKSUM: 782c4001284e36e16c5cd8137647238ee64d3e5c
+PODFILE CHECKSUM: 9f6f55023d5837a44838045e019d257fcf8f510d
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.7.5

@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,11 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        HelpshiftCore.initialize(with: HelpshiftAll.sharedInstance())
-        HelpshiftCore.install(forApiKey: "d2fb09a5aab5d78081bea7e3263f2965", domainName: "morevoltage.helpshift.com", appID: "morevoltage_platform_20170222092520006-a5b526294f4d663")
-        
-        Fabric.with([Crashlytics.self])
         
         UINavigationBar.appearance().setBackgroundImage(UIImage(color: .weedGreen), for: .default)
         UINavigationBar.appearance().shadowImage = UIImage()

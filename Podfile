@@ -6,11 +6,8 @@ target 'Alarm' do
   use_frameworks!
 
   # Pods for Alarm
-  pod 'Fabric', '~> 1.6'
-  pod 'Crashlytics', '~> 3.8'
   pod 'RevealingSplashView', '~> 0.2'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
-  pod 'Helpshift', '5.10-bitcode'
 end
 
 #target 'Alarm WatchKit App' do
