@@ -6,8 +6,8 @@ target 'Alarm' do
   use_frameworks!
 
   # Pods for Alarm
-  pod 'RevealingSplashView', '~> 0.2'
-  pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'RevealingSplashView', :git => 'https://github.com/weakfl/RevealingSplashView.git', :branch => 'swift-5'
+  pod 'SkyFloatingLabelTextField', '~> 3.7'
 end
 
 #target 'Alarm WatchKit App' do

@@ -70,7 +70,7 @@ private extension UNUserNotificationCenter {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
-        content.sound = .default()
+        content.sound = .default
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         add(request, withCompletionHandler: completionHandler)
     }

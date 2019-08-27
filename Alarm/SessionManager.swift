@@ -14,7 +14,7 @@ let SM = SessionManager()
 class SessionManager: NSObject {
     
     lazy var session: WCSession = { [unowned self] in
-        let session = WCSession.default()
+        let session = WCSession.default
         session.delegate = self
         session.activate()
         return session
