@@ -1,6 +1,6 @@
 # 420! Alarm
 
-[![Language](https://img.shields.io/badge/Swift-3.1-orange.svg?style=flat)](https://swift.org)
+[![Language](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://swift.org)
 
 [Download on the App Store](https://itunes.apple.com/us/app/420/id1194325430?ls=1&mt=8)
 
