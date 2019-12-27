@@ -76,7 +76,7 @@ extension TableViewController {
 extension TableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.separatorInset.left = 54
+        cell.separatorInset.left = 55
         cell.preservesSuperviewLayoutMargins = false
         cell.layoutMargins = UIEdgeInsets()
     }
