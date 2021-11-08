@@ -11,7 +11,7 @@ import UserNotifications
 private let UNC = UNUserNotificationCenter.current()
 
 enum AlarmType: String {
-    case am, pm, day
+    case am, pm, day, hourly
     
     private var dateComponents: DateComponents {
         switch self {
@@ -29,6 +29,11 @@ enum AlarmType: String {
             var components = DateComponents()
             components.month = 4
             components.day = 20
+            return components
+        case .hourly:
+            var components = DateComponents()
+            components.hour = Calendar.current.component(.hour, from: Date())
+            components.minute = 20
             return components
         }
     }
