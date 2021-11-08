@@ -1,10 +1,10 @@
 PODS:
-  - RevealingSplashView (0.8.0)
-  - SkyFloatingLabelTextField (3.7.0)
+  - RevealingSplashView (0.9.0)
+  - SkyFloatingLabelTextField (4.0.0)
 
 DEPENDENCIES:
-  - RevealingSplashView (from `https://github.com/weakfl/RevealingSplashView.git`, branch `swift-5`)
-  - SkyFloatingLabelTextField (~> 3.7)
+  - RevealingSplashView (from `https://github.com/PiXeL16/RevealingSplashView.git`, tag `0.9.0`)
+  - SkyFloatingLabelTextField (~> 4.0)
 
 SPEC REPOS:
   trunk:
@@ -12,18 +12,18 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   RevealingSplashView:
-    :branch: swift-5
-    :git: https://github.com/weakfl/RevealingSplashView.git
+    :git: https://github.com/PiXeL16/RevealingSplashView.git
+    :tag: 0.9.0
 
 CHECKOUT OPTIONS:
   RevealingSplashView:
-    :commit: 62a54f3164ed84e1a18c6981d7ff50a90af6525f
-    :git: https://github.com/weakfl/RevealingSplashView.git
+    :git: https://github.com/PiXeL16/RevealingSplashView.git
+    :tag: 0.9.0
 
 SPEC CHECKSUMS:
-  RevealingSplashView: 830eb5d52142f2c6121f9a4805ff4de903f583b7
-  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
+  RevealingSplashView: 84771867eddc18612f2f3c998d947d40c36e7c52
+  SkyFloatingLabelTextField: 79ddc40e4ad59707fedbb48d605417aee48bb78a
 
-PODFILE CHECKSUM: 1683aeba4a7e3b655d2667a9515369b5c337addf
+PODFILE CHECKSUM: 0b8875e9fb67e944cff33708b0a79eabb92a9375
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.2
