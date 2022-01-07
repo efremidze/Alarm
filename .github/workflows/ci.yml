@@ -1,0 +1,17 @@
+name: Swift
+on: [push]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+         path: Pods
+         key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+         restore-keys: |
+          ${{ runner.os }}-pods-
+      - name: Cocoapods
+        run: pod install
+      - name: Build and Test
+        run: set -o pipefail && xcodebuild -workspace "Alarm.xcworkspace" -scheme "Alarm" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO clean build | xcpretty
