@@ -1,4 +1,4 @@
-name: Swift
+name: CI
 on: [push]
 jobs:
   build:
@@ -11,7 +11,9 @@ jobs:
          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
          restore-keys: |
           ${{ runner.os }}-pods-
+      - name: Bundle install
+        run: bundle install
       - name: Cocoapods
-        run: pod install
+        run: bundle exec pod install
       - name: Build and Test
-        run: set -o pipefail && xcodebuild -workspace "Alarm.xcworkspace" -scheme "Alarm" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO clean build | xcpretty
+        run: bundle exec fastlane test
